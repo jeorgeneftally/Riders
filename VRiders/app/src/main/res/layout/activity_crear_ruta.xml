@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:context=".CrearRuta">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:background="@color/SeaGreen">
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="60dp"
+            android:text="CREA TU RUTA"
+            android:textColor="@color/Black"
+            android:fontFamily="@font/masterplan2"
+            android:textSize="50dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp">
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:id="@+id/btnseleccionarRuta"
+                android:layout_height="wrap_content"
+                android:layout_margin="15sp"
+                android:background="@drawable/boton"
+                android:bufferType="spannable"
+                android:text="@string/btnRuta"
+                android:textColor="#ffffff" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:id="@+id/btntrazarruta"
+                android:layout_height="wrap_content"
+                android:layout_margin="15sp"
+                android:background="@drawable/boton"
+                android:text="@string/btnRuta2"
+                android:textColor="#ffffff" />
+        </LinearLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textfield.TextInputLayout
+
+                        android:id="@+id/description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="32dp"
+                        android:textColorHint="@color/Black"
+                        >
+
+                        <EditText
+                            android:id="@+id/campo_description"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="@string/description"
+                            android:inputType="text"
+                            android:shadowColor="#000000"
+                            android:singleLine="true"
+                            android:textColor="#000000" />
+
+
+
+                    </com.google.android.material.textfield.TextInputLayout
+                        >
+                    <com.google.android.material.textfield.TextInputLayout
+
+                        android:id="@+id/horaInicio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="32dp"
+                        android:textColorHint="@color/Black"
+                        >
+
+                        <EditText
+                            android:id="@+id/campo_inicio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="@string/horaInicio"
+                            android:inputType="text"
+                            android:shadowColor="#000000"
+                            android:singleLine="true"
+                            android:textColor="#000000"
+                            />
+
+
+                    </com.google.android.material.textfield.TextInputLayout
+                        >
+                    <com.google.android.material.textfield.TextInputLayout
+
+                        android:id="@+id/horaReunion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="32dp"
+                        android:textColorHint="@color/Black"
+                        >
+
+                        <EditText
+                            android:id="@+id/campo_reunion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="@string/horaReunion"
+                            android:inputType="text"
+                            android:shadowColor="#000000"
+                            android:singleLine="true"
+                            android:textColor="#000000"
+                            />
+                    </com.google.android.material.textfield.TextInputLayout
+                        >
+                    <com.google.android.material.textfield.TextInputLayout
+
+                        android:id="@+id/fecha"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="32dp"
+                        android:textColorHint="@color/Black"
+                        >
+
+                        <EditText
+                            android:id="@+id/campo_fecha"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="@string/fecha"
+                            android:inputType="date"
+                            android:shadowColor="#000000"
+                            android:singleLine="true"
+                            android:textColor="#000000"
+                            />
+                    </com.google.android.material.textfield.TextInputLayout
+                        >
+
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+                    <TextView
+                        android:id="@+id/campo_ruta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tipo de ruta"
+                        android:textColor="#000"
+                        android:textSize="20dp"
+                        android:paddingStart="30dp"
+                        />
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:id="@+id/tipoRuta"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="5dp">
+
+
+                    </Spinner>
+                    <com.google.android.material.textfield.TextInputLayout
+
+                        android:id="@+id/password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="32dp"
+                        android:textColorHint="@color/Black"
+                        >
+
+                        <EditText
+                            android:id="@+id/campo_password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="@string/password"
+                            android:inputType="text"
+                            android:shadowColor="#000000"
+                            android:singleLine="true"
+                            android:textColor="#000000" />
+                    </com.google.android.material.textfield.TextInputLayout
+                        >
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/groupbutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="20dp">
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:id="@+id/btncrearuta"
+                        android:background="@drawable/boton"
+                        android:text="@string/create"
+                        android:textColor="#ffffff"
+                        />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/btncancelaruta"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/boton"
+                        android:text="@string/cancel"
+                        android:textColor="#ffffff" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/btnguardaRuta"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/boton"
+                        android:text="@string/save"
+                        android:textColor="#ffffff" />
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+
+
+        </ScrollView>
+
+
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

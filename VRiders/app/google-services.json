@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "356279917966",
+    "firebase_url": "https://vriders-8ed04.firebaseio.com",
+    "project_id": "vriders-8ed04",
+    "storage_bucket": "vriders-8ed04.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:356279917966:android:a806490db24e4074",
+        "android_client_info": {
+          "package_name": "cl.ubiobio.vriders"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "356279917966-2rq0rl2vekp1b9gmi3pij692vigrsibn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cl.ubiobio.vriders",
+            "certificate_hash": "22c82fe555f7b923d0366786d9701b454e839250"
+          }
+        },
+        {
+          "client_id": "356279917966-uc1cerfsmlmm82g268501nnqs5aj8vsn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDad_PtMyoIKZMz0MY2aiRrvslrfrqMMOY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "356279917966-uc1cerfsmlmm82g268501nnqs5aj8vsn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
