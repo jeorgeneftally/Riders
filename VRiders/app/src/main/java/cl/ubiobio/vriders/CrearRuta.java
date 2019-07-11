@@ -12,12 +12,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,9 +32,7 @@ public class CrearRuta extends AppCompatActivity {
     Spinner tipodeRuta;
     EditText contrasena;
     Button subircrearRuta;
-
     DatabaseReference myrootreference;
-
 
 
     @Override
@@ -51,6 +52,7 @@ public class CrearRuta extends AppCompatActivity {
         contrasena=findViewById(R.id.campo_password);
         myrootreference=FirebaseDatabase.getInstance().getReference();
 
+
         myrootreference.child("Rutas").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -61,12 +63,13 @@ public class CrearRuta extends AppCompatActivity {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             Rutas listrutas=snapshot.getValue(Rutas.class);
-                            String Descripcion=listrutas.getDescripcion();
+                            String nombre=listrutas.getDescripcion();
                             String HoraInicio=listrutas.getHoraInicio();
                             String HoraReunion=listrutas.getHoraReunion();
                             String Fecha=listrutas.getFecha();
                             String TipoRuta=listrutas.getTipoRuta();
                             String Contrasena=listrutas.getContrasena();
+                            String id_Usuario=listrutas.getId_Usuario();
 
                         }
 
@@ -90,6 +93,7 @@ public class CrearRuta extends AppCompatActivity {
 
 
 
+
         subircrearRuta=findViewById(R.id.btncrearuta);
         subircrearRuta.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,7 +105,9 @@ public class CrearRuta extends AppCompatActivity {
                 String textFecha=fecha.getText().toString().trim();
                 String texttipodeRuta=tipodeRuta.getSelectedItem().toString();
                 String textContrasena=contrasena.getText().toString().trim();
-                enviarDatos(textDescripcion, textHoraInicio, textHoraReunion, textFecha, texttipodeRuta, textContrasena);
+                String textIdUsuario=FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+                enviarDatos(textDescripcion, textHoraInicio, textHoraReunion, textFecha, texttipodeRuta, textContrasena,textIdUsuario);
 
             }
         });
@@ -116,7 +122,7 @@ public class CrearRuta extends AppCompatActivity {
 
     }
 
-    private void enviarDatos(String textDescripcion, String textHoraInicio, String textHoraReunion, String textFecha, String texttipodeRuta, String textContrasena) {
+    private void enviarDatos(String textDescripcion, String textHoraInicio, String textHoraReunion, String textFecha, String texttipodeRuta, String textContrasena,String textIdUsuario) {
         Map<String,Object> datosRuta=new HashMap<>();
         datosRuta.put("Descripcion",textDescripcion);
         datosRuta.put("HoraInicio",textHoraInicio);
@@ -124,6 +130,7 @@ public class CrearRuta extends AppCompatActivity {
         datosRuta.put("Fecha",textFecha);
         datosRuta.put("TipoRuta",texttipodeRuta);
         datosRuta.put("contrasena",textContrasena);
+        datosRuta.put("id_Usuario",textIdUsuario);
 
         myrootreference.child("Rutas").push().setValue(datosRuta);
     }

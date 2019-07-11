@@ -7,6 +7,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,6 +18,14 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Registro extends AppCompatActivity {
 
@@ -27,13 +36,14 @@ public class Registro extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     //definr barra de progreso
     ProgressDialog progressDialog;
-
+    DatabaseReference myrootreference;
     Button cancelarRegistro;
     @Override
     protected void onCreate(Bundle saveInstanceState){
         super.onCreate(saveInstanceState);
         setContentView(R.layout.activity_registro);
         cancelarRegistro=findViewById(R.id.btncancelarRegistro);
+        myrootreference= FirebaseDatabase.getInstance().getReference();
         cancelarRegistro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,6 +62,17 @@ public class Registro extends AppCompatActivity {
                 RegistrarUsuario();
             }
         });
+
+
+
+
+
+
+
+
+
+
+
     }
 
     private void RegistrarUsuario(){
