@@ -51,6 +51,24 @@
                 android:textColor="@color/White" />
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/verrutas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/boton"
+                android:text="Ultima ruta"
+                android:textColor="@color/White" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -58,16 +76,7 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <Button
-                android:id="@+id/btnunirseRuta"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="32dp"
-                android:background="@drawable/boton"
-                android:text="Unirse a Ruta"
-                android:textColor="@color/White" />
+
         </LinearLayout>
     </LinearLayout>
         <LinearLayout

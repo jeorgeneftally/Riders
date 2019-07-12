@@ -14,7 +14,8 @@ public class CrearOUnirRuta extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crear_o_unir_ruta);
         Button crearRuta=findViewById(R.id.btncrearRuta);
-        Button unirseRuta=findViewById(R.id.btnunirseRuta);
+
+        Button ultimaRuta=findViewById(R.id.verrutas);
         crearRuta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -22,14 +23,14 @@ public class CrearOUnirRuta extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        unirseRuta.setOnClickListener(new View.OnClickListener() {
+        ultimaRuta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(CrearOUnirRuta.this,Filtros.class);
+                Intent intent= new Intent(CrearOUnirRuta.this,nombreRuta.class);
                 startActivity(intent);
             }
         });
+
 
 
 
