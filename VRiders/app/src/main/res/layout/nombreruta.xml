@@ -66,8 +66,8 @@
                     />
 
                 <Button
-                    android:layout_width="wrap_content"
                     android:id="@+id/unirse"
+                    android:layout_width="wrap_content"
                     android:layout_height="35dp"
                     android:layout_marginStart="100dp"
                     android:background="@drawable/boton"
@@ -101,16 +101,19 @@
 
 
         <ImageView
-            android:id="@+id/map"
-            android:layout_width="wrap_content"
-            android:layout_height="160dp"
-            android:layout_margin="20dp"
-            android:paddingStart="30sp"
-            android:paddingEnd="30sp"
-            android:src="@drawable/mapa3">
+            android:src="@drawable/ic_camera"
+            android:id="@+id/contenedorimagen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="40dp"
+            />
 
-        </ImageView>
-
+        <Button
+            android:id="@+id/fab"
+            android:layout_width="156dp"
+            android:layout_height="57dp"
+            android:layout_weight="6"
+            android:text="Foto" />
 
         <LinearLayout
             android:layout_width="match_parent"

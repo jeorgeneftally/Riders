@@ -56,7 +56,9 @@
     <string name="title_activity_trazar_puntos">Map</string>
     <string name="titlulo_pickers">Obtener fecha y hora</string>
     <string name="formato_fecha">dd/mm/yyyy</string>
-    <string name="formato_hora">hh:mm</string>
+    <string name="Unirse">Selecciona tu Ruta</string>
+    <string name="Rutas">Rutas</string>
+    <string name="title_activity_punto_reunion">Map</string>
 
 </resources>
 

@@ -41,7 +41,7 @@
 
             <Button
                 android:layout_width="match_parent"
-                android:id="@+id/btnseleccionarRuta"
+                android:id="@+id/btnPuntoInicio"
                 android:layout_height="wrap_content"
                 android:layout_margin="15sp"
                 android:background="@drawable/boton"
@@ -80,8 +80,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="32dp"
-                        android:textColorHint="@color/Black"
-                        >
+                        android:textColorHint="@color/Black">
 
                         <EditText
                             android:id="@+id/campo_description"
@@ -95,17 +94,15 @@
                             android:textColor="#000000" />
 
 
+                    </com.google.android.material.textfield.TextInputLayout>
 
-                    </com.google.android.material.textfield.TextInputLayout
-                        >
                     <com.google.android.material.textfield.TextInputLayout
 
                         android:id="@+id/horaInicio"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="32dp"
-                        android:textColorHint="@color/Black"
-                        >
+                        android:textColorHint="@color/Black">
 
                         <EditText
                             android:id="@+id/campo_inicio"
@@ -113,23 +110,21 @@
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:hint="@string/horaInicio"
-                            android:inputType="text"
+                            android:inputType="time"
                             android:shadowColor="#000000"
                             android:singleLine="true"
-                            android:textColor="#000000"
-                            />
+                            android:textColor="#000000" />
 
 
-                    </com.google.android.material.textfield.TextInputLayout
-                        >
+                    </com.google.android.material.textfield.TextInputLayout>
+
                     <com.google.android.material.textfield.TextInputLayout
 
                         android:id="@+id/horaReunion"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="32dp"
-                        android:textColorHint="@color/Black"
-                        >
+                        android:textColorHint="@color/Black">
 
                         <EditText
                             android:id="@+id/campo_reunion"
@@ -137,21 +132,19 @@
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:hint="@string/horaReunion"
-                            android:inputType="text"
+                            android:inputType="time"
                             android:shadowColor="#000000"
                             android:singleLine="true"
-                            android:textColor="#000000"
-                            />
-                    </com.google.android.material.textfield.TextInputLayout
-                        >
+                            android:textColor="#000000" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
                     <com.google.android.material.textfield.TextInputLayout
 
                         android:id="@+id/fecha"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="32dp"
-                        android:textColorHint="@color/Black"
-                        >
+                        android:textColorHint="@color/Black">
 
                         <EditText
                             android:id="@+id/campo_fecha"
@@ -162,12 +155,8 @@
                             android:inputType="date"
                             android:shadowColor="#000000"
                             android:singleLine="true"
-                            android:textColor="#000000"
-                            />
-                    </com.google.android.material.textfield.TextInputLayout
-                        >
-
-
+                            android:textColor="#000000" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
 
                 </LinearLayout>
@@ -175,92 +164,47 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    >
-                    <TextView
-                        android:id="@+id/campo_ruta"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Tipo de ruta"
-                        android:textColor="#000"
-                        android:textSize="20dp"
-                        android:paddingStart="30dp"
-                        />
+                    android:orientation="horizontal">
 
-                    <Spinner
-                        android:layout_width="match_parent"
-                        android:id="@+id/tipoRuta"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:paddingTop="5dp">
-
-
-                    </Spinner>
                     <com.google.android.material.textfield.TextInputLayout
 
                         android:id="@+id/password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="32dp"
-                        android:textColorHint="@color/Black"
-                        >
-
-                        <EditText
-                            android:id="@+id/campo_password"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:ems="10"
-                            android:hint="@string/password"
-                            android:inputType="text"
-                            android:shadowColor="#000000"
-                            android:singleLine="true"
-                            android:textColor="#000000" />
-                    </com.google.android.material.textfield.TextInputLayout
-                        >
+                        android:textColorHint="@color/Black" />>
                 </LinearLayout>
 
 
                 <LinearLayout
                     android:id="@+id/groupbutton"
-                    android:layout_width="match_parent"
+                    android:layout_width="226dp"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginStart="20dp">
+                    android:layout_marginStart="70dp"
+                    android:orientation="horizontal">
 
                     <Button
+                        android:id="@+id/btncrearuta"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:id="@+id/btncrearuta"
                         android:background="@drawable/boton"
                         android:text="@string/create"
-                        android:textColor="#ffffff"
-                        />
+                        android:textColor="#ffffff" />
 
                     <Button
+                        android:id="@+id/btncancelaruta"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/btncancelaruta"
                         android:layout_margin="10dp"
                         android:background="@drawable/boton"
                         android:text="@string/cancel"
                         android:textColor="#ffffff" />
 
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/btnguardaRuta"
-                        android:layout_margin="10dp"
-                        android:background="@drawable/boton"
-                        android:text="@string/save"
-                        android:textColor="#ffffff" />
                 </LinearLayout>
 
 
-
-
             </LinearLayout>
-
 
 
         </ScrollView>

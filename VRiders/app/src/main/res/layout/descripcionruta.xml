@@ -32,11 +32,10 @@
                     android:layout_height="match_parent"
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="10dp"
+                    android:fontFamily="@font/masterplan2"
                     android:text="NOMBRE DE RUTA"
                     android:textColor="@color/Black"
-                    android:fontFamily="@font/masterplan2"
-                    android:textSize="60dp"
-                    />
+                    android:textSize="60dp" />
             </LinearLayout>
 
 

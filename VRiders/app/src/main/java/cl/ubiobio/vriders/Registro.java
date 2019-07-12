@@ -28,7 +28,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Registro extends AppCompatActivity {
-
+    public String user1,pass2;
     //defin objetos
     EditText TextUsuario;
     EditText Textcontrasena;
@@ -63,6 +63,7 @@ public class Registro extends AppCompatActivity {
             }
         });
 
+        myrootreference=FirebaseDatabase.getInstance().getReference();
 
 
 
@@ -79,6 +80,8 @@ public class Registro extends AppCompatActivity {
         //obtener usuario y conteraseña de los cuadros de texto
         String email=TextUsuario.getText().toString().trim();
         String constrasena=Textcontrasena.getText().toString().trim();
+        user1=email;
+        pass2=constrasena;
         // verificar que los cuadros de texto no esten vacios
         if (TextUtils.isEmpty(email)){
             Toast.makeText(Registro.this,"se ha registrado el usuario",Toast.LENGTH_LONG).show();
@@ -91,13 +94,16 @@ public class Registro extends AppCompatActivity {
         progressDialog.setMessage("Realizando registro en linea...");
         progressDialog.show();
         // creando nuevo usuario
+
         firebaseAuth.createUserWithEmailAndPassword(email,constrasena).
                 addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         //revisando si se realizo con exito
                         if (task.isSuccessful()){
+                            enviardatos();
                             Toast.makeText(Registro.this,"se ha registrado el usuario",Toast.LENGTH_LONG).show();
+
 
                         }else{
                             //revisar si se presentan colisiones
@@ -110,5 +116,22 @@ public class Registro extends AppCompatActivity {
                         progressDialog.dismiss();
                     }
                 });
+
+
+    }
+
+    private void enviardatos() {
+        enviarDatosUsuario(user1,pass2);
+    }
+
+    private void enviarDatosUsuario(String email, String constrasena) {
+        Map<String,Object> datosUsuarios=new HashMap<>();
+        datosUsuarios.put("Email",email);
+        datosUsuarios.put("Password",constrasena);
+        datosUsuarios.put("Name","");
+        datosUsuarios.put("telefono","");
+        datosUsuarios.put("id_Usuario",FirebaseAuth.getInstance().getCurrentUser().getUid());
+        //enviar los datos a la firebase
+        myrootreference.child("Usuarios").push().setValue(datosUsuarios);
     }
 }
