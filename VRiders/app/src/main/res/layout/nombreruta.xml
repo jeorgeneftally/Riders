@@ -96,7 +96,8 @@
             android:layout_width="156dp"
             android:layout_height="57dp"
             android:layout_weight="6"
-            android:text="Foto" />
+            android:text="Foto"
+            android:background="@drawable/boton"/>
 
         <LinearLayout
             android:layout_width="match_parent"
